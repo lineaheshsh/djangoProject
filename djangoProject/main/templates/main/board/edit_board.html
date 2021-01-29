@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>수정 페이지</title>
+</head>
+<body>
+    <h1>수정 페이지</h1>
+    <form method="POST">
+        {% csrf_token %}
+        제목<br>
+        <input type="text" name="ttl" value="{{board.ttl}}"><br>
+        내용<br>
+        <textarea rows="10" cols="50" name="contents">{{board.contents}}</textarea><br>
+        글쓴이<br>
+        <input type="text" name="writer" value="{{board.writer}}"><br>
+        <input type="submit" value="수정">
+        <button><a href="/board/{{board.pk}}/remove">삭제</a></button>
+    </form>
+</body>
+</html>
